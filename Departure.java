@@ -36,10 +36,9 @@ public class Departure {
             //Selects a random runway and adds the plane to it
             Runway selectedRunway = runways.get(random.nextInt(runways.size()));
             selectedRunway.addPlane(plane);
-        } 
-        
-        //If no runways are avalible, this will display a message
-        else {
+        } else { 
+            
+            //If no runways are avalible, this will display a message
             System.out.println("No runways available for plane assignment.");
         }
     }
