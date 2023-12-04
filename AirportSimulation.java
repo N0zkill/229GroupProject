@@ -28,19 +28,20 @@ public class AirportSimulation {
         
         //Generates y planes with random departure directions
         Random random = new Random();
+        
+        //Loop to assign y planes in random directions
         for (int i = 0; i < y; i++) {
             int departureDirection = random.nextInt(x); 
-            Plane plane = new Plane("Plane " + i, departureDirection);
+            Plane plane = new Plane("Plane" + i, departureDirection);
 
-            // Assign the plane to a runway in the departure system
+            //Assign the plane to a runway in the departure system
             departureSystem.assignPlaneToRunway(plane);
         }
 
-        // Display the planes on each runway
+        //Display the planes on each runway
         List<Runway> allRunways = departureSystem.getRunways();
         for (int i = 0; i < allRunways.size(); i++) {
             System.out.println("Runway " + i + ": " + allRunways.get(i).getPlanes());
         }
     }
-        
 }
