@@ -1,0 +1,75 @@
+package com.mycompany.reversestringstack;
+import java.util.Stack;
+import java.util.Scanner;
+/**
+ *
+ * @author ianazimov
+ */
+public class ReverseStringStack {
+
+    public static void main(String[] args) {
+        
+        //implement scanner to take user input
+        Scanner scan = new Scanner(System.in);
+        
+        //premade string to test
+        String stringExample = "Chuck Norris can divide by zero";
+        //scanner input string
+        String stringScan = scan.nextLine();
+        
+        //these are the reversed words that will be stored after calling appropriate method
+       String reversedExample = reverseSentence(stringExample);
+       String reversedScan = reverseSentence(stringScan);
+
+        System.out.println();
+       
+       //print out each sentence with all the words reversed
+        System.out.println(reversedExample);
+        System.out.println(reversedScan);
+        
+        //System.out.println(stringScan);
+    }
+    
+    public static String reverseSentence(String sentence){
+        
+        //splits the given string into an array of strings separated via each space/" "
+        String[] words = sentence.split(" ");
+        
+        //create a new string to house the reversed sentence
+        StringBuilder reversedSentence = new StringBuilder();
+        
+        //for each string within the new array it will loop
+        for(String word : words){
+            
+            //It will call the reverseWord method to reverse each individual word, then add it  to the newly made String along with a " "
+            String reversedWord = reverseWord(word);
+            reversedSentence.append(reversedWord).append(" ");
+        }
+        //return the new string with the space off the end cut off 
+        return reversedSentence.toString().trim();
+    }
+    
+    public static String reverseWord(String word){
+        
+        //create a new stack to be used within the method housing different characters of each word
+        Stack<Character> stack = new Stack<>();
+        
+        //for each character in a word, said character is pushed onto a stack so the last letter is on top
+        for(char ch : word.toCharArray()){
+            stack.push(ch);
+        }
+        
+        //create a new reversedWord string
+        StringBuilder reversedWord = new StringBuilder();
+        
+        //while loop keeps going till stack is empty, with each iteration appending to the newly made string whatever character is on top of the stack, then popping it
+        while(!stack.isEmpty()){
+            reversedWord.append(stack.pop());
+        }
+        
+        //return the new reversed word
+        return reversedWord.toString();
+    }
+    
+    
+}
