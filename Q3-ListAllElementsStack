@@ -1,0 +1,62 @@
+package com.mycompany.listallelementsstack;
+import java.util.Stack;
+import java.util.Scanner;
+/**
+ *
+ * @author ianazimov
+ */
+public class ListAllElementsStack {
+
+    public static void main(String[] args) {
+        
+        //initialize scanner
+        Scanner scan = new Scanner(System.in);
+        
+        //initialize a variable to hold scanner inputs
+        int scanRef = 0;
+        
+        //initialize actual stack
+        Stack<Integer> stack = new Stack<>();
+       
+        //for loop to fill out the stack via user input
+        for(int i = 0; i < 10; i++){
+            scanRef = scan.nextInt();
+            stack.push(scanRef);
+        }
+        
+        //clones the original stack into a new one so the original won't be lost after the PrintStack method
+        Stack<Integer> stackRef = (Stack<Integer>) stack.clone();
+        
+        //Print statements 
+        System.out.println(" ");
+        System.out.println("Listed below are all the elements in the stack, from top to bottom:");
+        //calling PrintStack method
+        PrintStack(stackRef);
+        
+        //commented out code that would print the stack
+        //System.out.println(stack);
+    }
+    
+    //list all elements method
+    public static void PrintStack(Stack<Integer> stack){
+       
+        //variable to hold whatever value is top of the stack
+        int top;
+        
+        //if the stack is empty, prints out that it is empty
+        if(stack.isEmpty()){
+            System.out.println("The stack is empty.");
+        }
+        //otherwise prints out all variables from the stack, top to bottom by saving the top via peek(), printing it out, then popping it
+        else{
+            for(int i = 0; i < 10; i++){
+            top = stack.peek();
+            System.out.println(top);
+            stack.pop();
+            }
+        }
+        
+        
+        
+    }
+}
