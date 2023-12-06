@@ -1,0 +1,10 @@
+#Design Document for Q5-ReverseStringStack
+This program reverses a premade string and also a string that is inputted with the help of a scanner. 
+How it works, is a new variable is made that is whatever is returned by the method reverseSentence and that is printed. 
+We call reverseSentence twice, once for the scanned string and the premade one. 
+In reverseSentence, an array of Strings is made, being filed by the given sentence called along with the method but split, as to fill the array. 
+Then for each word in the array via for loop, we call another method, reverseWord, to actually reverse each word. 
+We then append each reversed word as the for loop continues to return our final reversed string. 
+The reverseWord method simply works by making a new stack for characters in the word, then pushing each character in the word onto a stack. 
+After that, by appending the top of the stack to a new variable, reversedWord, which would be returned, we pop that character off the stack to continue until the word is backwards. 
+Through this process, each word in the string would return reversed.
