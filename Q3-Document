@@ -1,0 +1,6 @@
+#Design Document for Q3-ListAllElementsStack
+The program uses a scanner to input 10 integers into a stack. 
+From there, the new stack is cloned. 
+To show all elements in the stack from top to bottom, we call the PrintStack method with our stack, StackRef. 
+In the method, it saves the top of the stack via the peek method, prints out the top value, then pops it. 
+It repeats this for the entire stack, showing all elements in the stack.
