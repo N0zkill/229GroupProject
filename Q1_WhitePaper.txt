@@ -1,0 +1,3 @@
+I used a stack to evaluate the prefixes. “evalPrefix” function takes a string “val” and inputs the whole thing into the stack. “isOp” checks if a character is a digit or an operation.
+I iterated through the characters and if a digit is found it is pushed but if an operation is found it pulls 2 numbers and pushes back the result.
+Once it has reached the end the solution is outputted.
