@@ -15,7 +15,7 @@ public class AirportSimulation {
         //Promt for user to enter the number of runways
         System.out.println("How many runways?");
                 
-        //Initializes int y to the number of runways the user enters
+        //Initializes int x to the number of runways the user enters
         Scanner scnr = new Scanner(System.in); 
         int x = scnr.nextInt();
         
