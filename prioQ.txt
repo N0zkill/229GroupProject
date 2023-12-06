@@ -1,0 +1,55 @@
+import java.util.PriorityQueue;
+import java.util.Comparator;
+
+// Client class representing a client with a priority level
+class Client {
+    private String name;
+    private int priority;
+
+    public Client(String name, int priority) {
+        this.name = name;
+        this.priority = priority;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPriority() {
+        return priority;
+    }
+}
+
+
+
+// Custom Comparator to compare clients based on priority
+class ClientComparator implements Comparator<Client> {
+    
+    public int compare(Client client1, Client client2) {
+
+        // Higher priority clients come first in the queue
+        return Integer.compare(client2.getPriority(), client1.getPriority());
+    }
+}
+
+
+
+public class PriorityQueueExample {
+    public static void main(String[] args) {
+        // Create a PriorityQueue with a custom Comparator
+        PriorityQueue<Client> clientQueue = new PriorityQueue<>(new ClientComparator());
+
+        // Add clients with different priority levels to the queue
+        clientQueue.add(new Client("Alice", 3));
+        clientQueue.add(new Client("Bob", 1));
+        clientQueue.add(new Client("Charlie", 2));
+        clientQueue.add(new Client("David", 4));
+        clientQueue.add(new Client("Ali", 1));
+
+        // Poll elements from the queue (highest priority first)
+        while (!clientQueue.isEmpty()) {
+            Client client = clientQueue.poll();
+            System.out.println("Processing client: " + client.getName() + ", Priority: " + client.getPriority());
+        }
+    }
+}
