@@ -1,0 +1,3 @@
+The clients are put into a queue and they are given a number that relates to their level of priority.
+I then use the Comparator to compare between the people in the queue.
+Then they are printed in the priority they are given then in the order of the queue.
