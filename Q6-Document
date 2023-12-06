@@ -1,0 +1,14 @@
+#Design Document for Q6-SolveStackMaze
+This program has a premade 2D Array in main that functions as a maze. 
+The 0’s in the array simulate a path, and the 1’s simulate walls. 
+It calls the solveMaze function to actually solve it. 
+If the maze has no solution after the method executes, that will be printed. 
+To start, we make int variables for the size of the array, and then a stack for cells we are currently on, and then a hashset housing the values for cells visited. 
+We set our start position as (0, 0), and add it to the stack, also adding the start position to the visited array. 
+Next a while loop procs when the stack is not empty (which it isn’t). 
+It calculates the current cell, by using stack.peek(), and we hold our x and y position as int values. 
+There's an if loop that states if x and y are equal to the largest index of the 2d array that the maze has been solved as that is our exit in this scenario. 
+An arraylist for all neighbors of a cell are made, and then 4 if’s are present to check said neighbors, up, down, left and right, in that order. 
+If they’re valid adds that cell value, x and y to neighbors.
+Our final if & else loop, if neighbors is not empty, a random index is spawned from within neighbors size and that determines the next cell the program goes too. 
+We push that next cell variable onto the stack and add it to the visited array. Otherwise, we would pop the top value off the stack. 
